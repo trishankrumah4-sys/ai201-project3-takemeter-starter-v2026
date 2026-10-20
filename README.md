@@ -39,21 +39,24 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+
 
 
 
 ---
 
 ## Label Taxonomy
+**label_one:** (Backed by statistics)
+- Example: "San Francisco is 6-0,and multiple current power rankings have them at number 1."
+- Example: "Buffalo is 5-1,but their defense has been a major concern."
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+**label_two:** (Backed by checkable fact)
+- Example: "Is Josh Allen covering up too many problems?"
+- Example: "Caleb William's return to Chicago was impressive"
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+**Decision rule for the hardest boundary:** (the rule you'll use every time a post could be either of two labels)
 
+   
 ### `label_one`
 
 **Definition:**
