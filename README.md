@@ -46,49 +46,43 @@
 ---
 
 ## Label Taxonomy
-**label_one:** (Backed by statistics)
-- Example: "San Francisco is 6-0,and multiple current power rankings have them at number 1."
-- Example: "Buffalo is 5-1,but their defense has been a major concern."
 
-**label_two:** (Backed by checkable fact)
-- Example: "Is Josh Allen covering up too many problems?"
-- Example: "Caleb William's return to Chicago was impressive"
 
 **Decision rule for the hardest boundary:** (the rule you'll use every time a post could be either of two labels)
+Comment 1:
+At this point, I think the 49ers have earned the No. 1 spot. Being undefeated this late in the season says a lot, especially with how balanced this team is on both sides of the ball.
+Comment 2:
+I think people are still sleeping on San Francisco. It’s not just that they’re winning — they’re finding different ways to win, and that’s usually what separates legitimate Super Bowl teams from teams that just have a hot stage.
+Comment 4:
+Caleb has always had the physical talent. The question was whether he could translate that into consistent NFL football. If he keeps playing like this, I think that conversation is going to look very different by the end of the season.
+The Bills are one of those teams where the regular-season record doesn’t tell the whole story. I’m much more interested in how they look against elite competition because that’s where their weaknesses will really show.
+
 
    
-### `label_one`
+### `analysis`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** A post that cites a specific checkable fact, such as a record, a stat, or a ranking.
 
 **Example 1:**
->
+> San Francisco is 6-0, and multiple current power rankings have them at number 1.
 
 **Example 2:**
->
+> Buffalo is 5-1, but their defense has been a major concern.
+### `reaction`
+
+**Definition:** A post that gives an opinion, impression, or question about a team or player without citing a specific checkable fact.
+
+**Example 1:**
+> Caleb Williams' return to Chicago was impressive.
+
+**Example 2:**
+> (find a real post that is an opinion or impression with no stat, record, or ranking)
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `analysis` and `reaction`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
-
-
-
----
-
+**The decision rule I used every time:** If a post names a specific checkable fact, such as a record, a stat, or a ranking, it is `analysis`, even if it also gives an opinion. If it gives only an opinion or impression, it is `reaction`.
 ## The Dataset
 
 <!-- Where you collected from, how you labelled, your counts, and three hard
