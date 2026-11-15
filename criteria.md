@@ -3,130 +3,81 @@
 Five criteria that say what "working" means for this classifier, written in
 unit 5 **before** anything was trained.
 
-**All five are yours this time.** 
-1. Overall accuracy at least 75%.
-How I’d test it: run the model on the held-out test split and compute accuracy. Clear.
-Might be too easy: if one label holds most of your test posts, a model that always guesses it can score high. With a 70% cap, a guesser could get close to 70%, so 75% is only 5 points above guessing.
-Might be too hard: with about 30 test posts (15% of 200), one or two errors move the number by 3 to 7 points.
-2. Every label F1 at least 0.60.
-How I’d test it: compute F1 per label on the held-out set and take the minimum. Clear.
-Too easy: the reason applies to common labels but this is a minimum, so it only needs to hold for the weakest one.
-Too hard: your smallest label may have only a handful of test examples, so one mistake swings its F1 by a lot.
-3. No label above 60% of the training examples.
-How I’d test it: count labels in labels.csv. Clear, but notice it says “training examples”, while the assignment’s cap is 70% of the whole file. Decide which you mean, and whether the 60% applies before or after the 70/15/15 split.
-Too easy: it’s something you control directly.
-Too hard: your 15 sample comments were all calm opinions, so you’ll need to collect other kinds of posts to hit it.
-4. At least 80% agreement with human annotators.
-Problem: I can’t test it as written. Which humans, on which posts? Next unit, you label 30 posts under a staff taxonomy and get an agreement rate. That measures you against the staff, while your sentence says the model agrees with annotators. Say which one you mean.
-Too easy or hard: depends on that choice, and a different taxonomy is much harder than yours.
-5. At least 85% of high-confidence predictions (90% or above) are correct.
-How I’d test it: take predictions where the top probability is at least 0.90 and check how many are right. Clear.
-Too easy: small models are often highly confident and also mostly right on easy posts.
-Too hard: with a small test set, there may be only a few predictions that confident, so the number could rest on 5 or 10 posts. Add what you’ll do if there are too few.
-
-
-An acceptance criterion names a number. *"The model is accurate"* is an
-opinion. *"Every label has an F1 of at least 0.60 on the held-out set"* is a
-criterion.
-
-Under each, write a sentence or two on **why that number**. A reason that says
-something about your data or your taxonomy earns credit — *"I picked 0.60 F1
-for `reaction` because it's my smallest label and I only have about 50
-examples of it"*. A reason that could be attached to any project does not.
-
-> Missing your own targets next unit costs you nothing. Setting a target so
-> easy you can't miss it does.
-
----
-
-## Pick numbers you can defend
-
-Not numbers that sound impressive. Three labels means a coin-flip guesser gets
-about 33%, so a target of 0.40 is barely a target. Your number should sit
-somewhere you'd honestly call useful.
-
-**Cover at least three of these five areas.** They're here as prompts, not as a
-form to fill in — a criterion that fits none of them is fine if it names a
-number.
-
-| Area | A question it could answer |
-|---|---|
-| Overall accuracy | How often does it need to be right to be worth using? |
-| Per-label performance | Is one label allowed to be much worse than the others? |
-| Balance | How lopsided can your label counts get before it's a problem? |
-| Consistency | If someone else labelled the same posts, how often should you agree? |
-| Confidence | Should a confident prediction be right more often than an unsure one? |
-
-Two things worth knowing before you pick numbers, because both will affect
-whether you hit them:
-
-- **Your smallest label will have the jumpiest score.** If a label has 50
-  examples, about 8 land in the test split. An F1 computed on 8 examples moves
-  a lot between seeds. A target for that label should be looser than one for
-  your biggest label, and saying so is a good reason.
-- **Unit 6 tests across three seeds, and the target has to hold across all
-  three.** A target of 0.65 against results of 0.71, 0.62, 0.68 is a **miss**.
-  Pick with that in mind — it is stricter than it first sounds.
+My data: 198 NFL posts from Bluesky, labelled `neutral` (about 104), `hot_take`
+(67) and `reasoned` (27). The notebook's 15% test split is about 30 posts, so
+roughly 16 neutral, 10 hot_take and only 4 reasoned. Every target below has to
+hold on all three seeds in unit 6.
 
 ---
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+Overall accuracy of at least **0.70** on the held-out test split, on every one
+of the three seeds.
 
-
-
-**Why this target:**
-
-
+**Why this target:** `neutral` is about 53% of my posts, so a model that always
+guesses `neutral` would score about 0.53. I want the model to beat that by a
+clear margin, not just squeak past it. I didn't go higher because the test split
+is only about 30 posts, so each wrong answer costs about 3 points, and the
+target has to survive the worst of three seeds.
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+F1 of at least **0.65** for `hot_take` and for `neutral`, and at least **0.40**
+for `reasoned`, on the held-out test split, on every seed.
 
-
-
-**Why this target:**
-
-
+**Why this target:** `hot_take` and `neutral` have enough examples (67 and about
+104) that their scores should be fairly stable, so I hold them to a real bar.
+`reasoned` is my smallest label with only 27 posts, so only about 4 land in the
+test split. One mistake there can move its F1 by 0.2 or more, so its target is
+looser on purpose. It is still well above zero, which is what a model that never
+predicts `reasoned` would get.
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
+In the whole `labels.csv` (before the notebook splits it), no label is more than
+**60%** of the rows, and the smallest label has at least **25** examples.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The assignment caps any label at 70%, but I set a stricter
+60% because a lopsided set teaches the model to guess `neutral`. My Bluesky
+searches pulled in a lot of news headlines and links, which all land in
+`neutral`, so this is the cap I'm most at risk of creeping toward if I add more
+posts. The 25-example floor is there because `reasoned` (27) is barely above it,
+and below that its test split would be 3 posts or fewer.
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
+When I label the 30 staff posts under the **staff taxonomy** (unit 6,
+`agreement.py`), I agree with the staff labels on at least **70%** of them
+(21 of 30).
 
-
-
-**Why this target:**
-
-
+**Why this target:** This measures me, not the model: whether I can apply
+someone else's written rules the way they meant them, which is the only check I
+have on whether my own 198 labels are consistent. I chose 70% rather than
+something higher because it's a taxonomy I didn't design, and my own labels had
+a fuzzy `hot_take` / `reasoned` boundary (for example, posts calling Lamar
+Jackson overrated with one reason attached). Each disagreement is about 3
+points, so 70% allows up to 9 misses.
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
+Of the test posts whose true label is `hot_take` or `reasoned`, at most **25%**
+are predicted as the other one of the two, on every seed.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The line between a hot take and a reasoned take ("does the
+post give a reason?") is the boundary I found hardest to apply myself, so it's
+the confusion I most expect. Confusing either of them with `neutral` is a
+different mistake. There are only about 14 hot_take and reasoned posts in the
+test split, so 25% allows about 3 swaps. I'll read this off the confusion matrix
+in section 7.
 
 ---
 
