@@ -46,7 +46,13 @@
 ---
 
 ## Label Taxonomy
+| Label | Definition |
+|---|---|
+| hot_take | A confident or mocking opinion about the NFL with no reason, stat, or evidence offered |
+| reasoned | An opinion about the NFL backed by a specific reason, stat, comparison, or clear argument explaining why |
+| neutral | No real opinion, such as news, scores, trade or injury reports, links, promos, questions, plain reactions, or off-topic posts |
 
+**Boundary rule:** Not arguing anything → neutral. Arguing with no reason given → hot_take. Arguing and gives a reason → reasoned.
 
 **Decision rule for the hardest boundary:** (the rule you'll use every time a post could be either of two labels)
 Comment 1:
