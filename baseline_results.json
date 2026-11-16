@@ -1,0 +1,190 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": false,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.2,
+    "f1_macro": 0.14322344322344321,
+    "per_label": {
+      "hot_take": {
+        "precision": 0.25,
+        "recall": 0.1111111111111111,
+        "f1": 0.15384615384615383,
+        "support": 9
+      },
+      "hot_take.cold.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 3
+      },
+      "neutral": {
+        "precision": 1.0,
+        "recall": 0.07142857142857142,
+        "f1": 0.13333333333333333,
+        "support": 14
+      },
+      "reasoned": {
+        "precision": 0.16666666666666666,
+        "recall": 1.0,
+        "f1": 0.2857142857142857,
+        "support": 4
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "#Chargers in the game for the next generation of Manning (who, by the way, is probably overrated AF)? I think I've seen this before! \"Where?\" *points to 2004 NFL Draft* There!",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "omfg I didn't realize how common moon trutherism has become serenity now www.nytimes.com/2026/11/14/o...",
+      "gold": "neutral",
+      "predicted": "neutral"
+    },
+    {
+      "text": "Hot take: The NFL should blow less plays neutral zone infractions and defensive offsides dead. Let the offense take the shot downfield. If the defense quits on the play, that's on them.",
+      "gold": "reasoned",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "The NFL is having one of its refs work two different games on Sunday because of last night\u2019s ground stop:",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "That's a pick. Why these NFL refs ass this year?",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Quarterback with a back either side, what\u2019s so stra\u2026\u2026.ohhhhh.",
+      "gold": "neutral",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "In real time, perhaps not much can be done (other than to discipline the refs). But after a week? Fuck you NFL. You're embarrassing the shield. Or you (oh, hey, guess what?), don't give a fuck about your players.",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "HOT TAKE, but I think the NFL isn't dying per se, but maybe in a sense having a \"bubble\" pop. Many parents these days are taking kids out of HS Football, and there has been many more season cancellations. CTE is real, and the NFL refuses to enforce real policies for leading with the head.",
+      "gold": "reasoned",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Professor, I didn't take you for the hot take type!    > While the 5\u201910\u201d quarterback could still have an NFL future,  \ud83d\ude02\ud83d\ude02\ud83d\ude02",
+      "gold": "neutral",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "No one knows what pass interference is in the NFL anymore, & neither do the refs. Every week. Random coin flips on every play.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "nfl refs really need to stop throwing flags on every fkn play. players can\u2019t even celebrate a touchdown without a flag being thrown, only for the ref to announce \u201cthere was no penalty on the play\u201d. they\u2019re ruining the whole spectacle.",
+      "gold": "reasoned",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "The hot take shows still talking low about Purdy?",
+      "gold": "neutral",
+      "predicted": "hot_take.cold."
+    },
+    {
+      "text": "\u201cSell\u201d what? A buncha overpaid, overrated do-nothings?  HOWIE: \u201cHey, any of you other NFL teams want a buncha overpaid, overrated do-nothings in exchange for a pile of riches so I can restock, reload and dominate?!\u201d  THE NFL: *crickets*",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Have I ever mentioned Josh McDaniels is the most overrated offensive coordinator in NFL history?",
+      "gold": "hot_take.cold.",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "No wonder the \ud83c\uddfa\ud83c\uddf8USA is in such existential trouble: guess how many of their professional sports heroes actually deny that the moon landing ever really happened? These are the guys that ordinary folk revere above anybody else. \ud83e\udd37\ud83c\udffc\ud83d\ude44\ud83e\udd37\ud83c\udffc www.nytimes.com/2026/11/14/o...",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Is Gonzalez one of the most overrated DBs in the #NFL? #Patriots",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Here's a preview of the #Seahawks' matchup against the Raiders, who are handing the keys of their offense to rookie quarterback and No. 1 overall pick Fernando Mendoza. sports.mynorthwest.com/nfl/seattle-...",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Play-by-play announcer Al Michaels and analyst Kirk Herbstreit came under fire on social media for early-game missed calls and controversial hot takes on wide receiver performance. Herbstreit drew more criticism in the second quarter after a play involving Matthew Golden. #SportsNews",
+      "gold": "neutral",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Why aren't NHL refs graded or evaluated like NFL refs? With significant dollars wagered on games, wouldn't both betting sites and the NHL want to get it right??",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "@ptishow.bsky.social Mr. Tony you say #JoshAllen has keys to MVP because hes 7-1 and has rush & passing TDs. Well hello..can I interest you in #BrockPurdy also 7-1 and has passing & rushing TDs? But @espn.com FB shows never talk about the #niners cant see the west coast leaders. #faithful. #NFL",
+      "gold": "hot_take.cold.",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "The Buffalo Bills\u2019 Quarterback Is a Moon Truther. That\u2019s Just the Start of It. www.nytimes.com/2026/11/14/o...",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "The question is how many NFL apologies will we get from the refs this week?",
+      "gold": "hot_take.cold.",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Check my most recent post. I think he\u2019s highly overrated because people don\u2019t understand the actual purpose of punting and the majority of NFL special teams coaches are doing the job simply to climb the coaching ladder",
+      "gold": "reasoned",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "A look at each NFL team's implied probability of winning Super Bowl LXI based on DraftKings betting odds.  The 49ers and Bills are currently the favorites, followed closely by the Jaguars and Bears after their aggressive trade deadline moves.",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "#NFL #news NFL NEWS #BrockPurdy #FernandoMendoza #LasVegasRaiders #LamarJackson #NewOrleansSaints #PukaNacua #winners_and_losers tom-gillispie.blogspot.com/2026/11/nfl-...",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Bears got some praise from NFL execs in this article from Jeremy Fowler. Picked to win the NFC North and represent the NFC in the Super Bowl.",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "Rutgers football's quarterback situation continues to worsen as a bad season nears its end.",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "he threw the QB down and wasn't flagged.  thanks for fixing your refs, NFL.",
+      "gold": "hot_take",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "et tu Brute? www.nytimes.com/2026/11/14/o...",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    },
+    {
+      "text": "lol.  Review crew, refs & missed field goals I need to watch with someone who can explain more of the rules. ESPN commentators were confusing. I\u2019m so tired of college & NFL missed field goals - we\u2019re not talking extremely hard ones, imo  What will Chiefs do today? It\u2019s not the first year for issues",
+      "gold": "neutral",
+      "predicted": "reasoned"
+    }
+  ]
+}
